@@ -63,3 +63,24 @@ $strImage = '
     ]
 }
 ';
+
+// ดูข้อความที่ LINE API ส่งมาให้เราถา้ หากมีใครส่ง VDO ให้บอท
+$strVdo = '
+{
+    "events": [ 
+        {
+            "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA", 
+            "type": "message", // คือประเภทของ event
+            "timestamp": 1462629479859,
+            "source": {
+                "type": "user",
+                "userId": "U206d25c2ea6bd87c17655609a1c37cb8" // คือไอดีของผูส้ ่งข้อความมา
+            }, 
+            "message": {
+                "id": "325708",
+                "type": "video" // ( text, image, sticker, file, video, audio, location )
+            }
+        }
+    ]
+}
+';
