@@ -15,7 +15,7 @@ $events=json_decode($content, true);
 
 if (!is_null($events['events'])) {
     //Loop through each event 
-    foreach($events['events']as $event){
+    foreach($events['events'] AS $event){
     // Line API send a lot of event type, we interested in message only. 
         if ($event['type'] == 'message') {
             switch($event['message']['type']) {
@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
                     $replyToken = $event['replyToken']; 
                     
                     //Reply message
-                    $respMessage='Hello, your message is '.$event['message']['text'];
+                    $respMessage='Hello, your message is ' . $event['message']['text'];
 
                     $httpClient=newCurlHTTPClient($channel_token); 
                     $bot=newLINEBot($httpClient, array('channelSecret'=> $channel_secret)); 
