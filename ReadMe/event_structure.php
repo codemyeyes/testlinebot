@@ -105,3 +105,28 @@ $strAudio = '
     ]
 }
 ';
+
+// ดูข้อความที่ LINE API ส่งมาให้เราถา้ หากมีใครส่ง Location ให้บอท
+$strLocation = '
+{
+    "events": [ 
+        {
+            "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA", 
+            "type": "message", // คือประเภทของ event
+            "timestamp": 1462629479859,
+            "source": {
+                "type": "user",
+                "userId": "U206d25c2ea6bd87c17655609a1c37cb8" // คือไอดีของผูส้ ่งข้อความมา
+            }, 
+            "message": {
+                "id": "325708",
+                "type": "location", // ( text, image, sticker, file, video, audio, location )
+                "title": "my location",
+                "address": "〒150-0002 東京都渋谷区渋谷2丁目21−1", 
+                "latitude": 35.65910807942215,
+                "longitude": 139.70372892916203
+            }
+        }
+    ]
+}
+';
