@@ -25,20 +25,20 @@ if (!is_null($events['events'])) {
             $replyToken = $event['replyToken']; 
 
             switch($event['message']['type']) {
-                case 'audio':
+                case 'video':
                     $messageID = $event['message']['id']; 
 
                     //Create video file on server.
                     $fileID = $event['message']['id'];
                     $response = $bot->getMessageContent($fileID); 
-                    $fileName = 'linebot.m4a'; 
+                    $fileName = 'linebot.mp4'; 
                     $file=fopen($fileName, 'w');
                     fwrite($file, $response->getRawBody());
 
-                    $respMessage='Hello, your audio ID is '.$messageID;
+                    $respMessage='Hello, your video ID is '.$messageID;
                     break;
                 default:
-                    $respMessage='Please send audio only';
+                    $respMessage='Please send video only';
                     break;
             }
             $textMessageBuilder = new TextMessageBuilder($respMessage);
