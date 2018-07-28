@@ -1,36 +1,39 @@
 <?php
-$host='ec2-23-21-238-28.compute-1.amazonaws.com';
-$dbname='d5hb6iga0kqmnd';
-$user='qjpjdxczqljfdi';
-$pass='51bf424af67c828b222d1fff444a74a87247aefcd9570560d19dc6e027c34529';
+require_once('./vendor/autoload.php');
 
-$url_conn = "pgsql:host=$host;dbname=$dbname";
+// Namespace
+use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
+use \LINE\LINEBot;
+use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 
-$conn = new PDO($url_conn,$user,$pass);
+$channel_token = '4nSgLi2JvUwvnTVc43xg1GhB2I6cNcbfD0ETN1iSfLJfR2dU2nHjvy9oLXqhAx3lL3nr+5EZJwcU1UIN/JLawSiAyiCIfbVP7LSycYRx/QIFNbBcjLhhftxqEmgnDhyh7Y4kHox48oZ/cxEQASoleQdB04t89/1O/w1cDnyilFU=';
+$channel_secret = 'ec9368121f4aa1a96f2be3bb7def2cd0';
 
-$rs = $conn->query("SELECT * FROM polls");
-if($rs !== null){
-    echo $rs->rowCount();
+//Get message from Line API
+$content = file_get_contents('php://input');
+$events=json_decode($content, true);
+
+if (!is_null($events['events'])) {
+    //Loop through each event 
+    foreach($events['events']as $event){
+    // Line API send a lot of event type, we interested in message only. 
+        if ($event['type'] == 'message') {
+            switch($event['message']['type']) {
+                case 'text':
+
+                    //Get replyToken
+                    $replyToken = $event['replyToken']; 
+                    
+                    //Reply message
+                    $respMessage='Hello, your message is '.$event['message']['text'];
+
+                    $httpClient=newCurlHTTPClient($channel_token); 
+                    $bot=newLINEBot($httpClient, array('channelSecret'=> $channel_secret)); 
+                    $textMessageBuilder=newTextMessageBuilder($respMessage);
+                    $response=$bot->replyMessage($replyToken, $textMessageBuilder); 
+                break;
+            } 
+        }
+    }   
 }
-
-/* INSERT */
-/*
-$params = array(
-    'user_id'=> $event['source']['userId'] , 
-    'slip_date'=> date('Y-m-d'),
-    'name'=> $event['message']['text'],
-);
-$statement=$connection->prepare('INSERT INTO slips (user_id, slip_date, name)VALUES(:user_id, :slip_date, :name)');
-$statement->execute($params);
-*/
-
-/* UPDATE */
-/*
-$params = array(
-    'name'=> $event['message']['text'], 
-    'slip_date'=> date('Y-m-d'),
-    'user_id'=> $event['source']['userId'], 
-);
-$statement=$connection->prepare('UPDATE slips SET name=:name WHERE slip_date=:slip_date AND user_id=:user_id');
-$statement->execute($params);
-*/
+echo "OK";
