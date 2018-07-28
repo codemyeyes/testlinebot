@@ -22,12 +22,12 @@ if (!is_null($events['events'])) {
             $replyToken = $event['replyToken']; 
 
             switch($event['message']['type']) {
-                case 'sticker':
-                    $messageID = $event['message']['packageId']; 
+                case 'image':
+                    $messageID = $event['message']['id']; 
                     $respMessage='Hello, your image ID is '.$messageID;
                     break;
                 default:
-                    $respMessage='Please send sticker only';
+                    $respMessage='Please send image only';
                     break;
             }
             

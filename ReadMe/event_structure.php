@@ -1,5 +1,5 @@
 <?php
-$str = '
+$strMsg = '
 {
     "events": [ 
         {
@@ -21,27 +21,7 @@ $str = '
 ';
 
 // ดูข้อความที่ LINE API ส่งมาให้เราถา้ หากมีใครส่งรูปภาพให้บอท
-
-$str = '
-{
-    "events": [ 
-        {
-            "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA", 
-            "type": "message", // คือประเภทของ event
-            "timestamp": 1462629479859,
-            "source": {
-                "type": "user",
-                "userId": "U206d25c2ea6bd87c17655609a1c37cb8" // คือไอดีของผูส้ ่งข้อความมา
-            }, 
-            "message": {
-                "id": "325708",
-                "type": "text", // ( text, image, sticker, file, video, audio, location )
-                "text": "Hello, world" // คือข้อความที่คนส่งคุยกบั บอท
-            }
-        }
-    ]
-}
-';$str = '
+$strImage = '
 {
     "events": [ 
         {
@@ -61,3 +41,25 @@ $str = '
 }
 ';
 
+// ดูข้อความที่ LINE API ส่งมาให้เราถา้ หากมีใครส่ง Sticker ให้บอท
+$strImage = '
+{
+    "events": [ 
+        {
+            "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA", 
+            "type": "message", // คือประเภทของ event
+            "timestamp": 1462629479859,
+            "source": {
+                "type": "user",
+                "userId": "U206d25c2ea6bd87c17655609a1c37cb8" // คือไอดีของผูส้ ่งข้อความมา
+            }, 
+            "message": {
+                "id": "325708",
+                "type": "sticker", // ( text, image, sticker, file, video, audio, location )
+                "packageId": "1",
+                "stickerId": "1"
+            }
+        }
+    ]
+}
+';
