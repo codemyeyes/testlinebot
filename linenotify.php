@@ -1,6 +1,7 @@
 <?php
 
-$Token = $_GET["token"];
+// $Token = $_GET["token"];
+$Token = '6Dp095D57jSNkHOBVUW/VxnZzTJeiNvMb8i4WKevKX51CXUx1Ww4Ym3qwMiqWFmrL3nr+5EZJwcU1UIN/JLawSiAyiCIfbVP7LSycYRx/QISOJDBqsjczyJUlSkS/kWOffmiGTzmIY02IZh/0lvRPwdB04t89/1O/w1cDnyilFU=';
 $message = $_GET["msg"];
 
 function line_notify($Token, $message)
