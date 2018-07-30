@@ -29,7 +29,10 @@ if (!is_null($events['events'])) {
                 break; 
             default:
                 //Reply message
-                $respMessage='Please send file only'; 
+                // $respMessage='Please send file only'; 
+                $error = array();
+                $error['event'] = $event;
+                $respMessage = json_encode($error);
                 break;
         }
 
