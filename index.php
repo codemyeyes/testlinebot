@@ -50,7 +50,7 @@ if (!is_null($events['events'])) {
                         $effect = $statement->execute($params); 
                     }
                     //Bot response
-                    $respMessage='Your data has saved.';
+                    $respMessage='Your data has saved. text';
                     $replyToken = $event['replyToken'];
                     $textMessageBuilder = new TextMessageBuilder($respMessage);
                     $response=$bot->replyMessage($replyToken, $textMessageBuilder); 
@@ -92,7 +92,7 @@ if (!is_null($events['events'])) {
                     }
                     
                     //Bot response
-                    $respMessage='Your data has saved.';
+                    $respMessage='Your data has saved. image';
                     $replyToken = $event['replyToken'];
                     $textMessageBuilder = new TextMessageBuilder($respMessage); 
                     $response=$bot->replyMessage($replyToken, $textMessageBuilder);
