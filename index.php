@@ -9,6 +9,9 @@ use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 $channel_token = '6Dp095D57jSNkHOBVUW/VxnZzTJeiNvMb8i4WKevKX51CXUx1Ww4Ym3qwMiqWFmrL3nr+5EZJwcU1UIN/JLawSiAyiCIfbVP7LSycYRx/QISOJDBqsjczyJUlSkS/kWOffmiGTzmIY02IZh/0lvRPwdB04t89/1O/w1cDnyilFU=';
 $channel_secret = 'ec9368121f4aa1a96f2be3bb7def2cd0';
 
+$httpClient = new CurlHTTPClient($channel_token);
+$bot = new LINEBot($httpClient,array('channelSecret' =>$channel_secret));
+
 $host = 'ec2-23-21-238-28.compute-1.amazonaws.com';
 $dbname = 'd5hb6iga0kqmnd'; 
 $user = 'qjpjdxczqljfdi';
