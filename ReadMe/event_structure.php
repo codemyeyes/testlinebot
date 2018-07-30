@@ -1,4 +1,6 @@
 <?php
+// EVENT GET FROM USER
+
 $strMsg = '
 {
     "events": [ 
@@ -127,6 +129,53 @@ $strLocation = '
                 "longitude": 139.70372892916203
             }
         }
+    ]
+}
+';
+
+// EVENT SEND TO USER
+$sendText = '
+{
+    "events": 
+    [ 
+        {
+            "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
+            "type": "message", "timestamp": 1462629479859, 
+            "source": {
+                "type": "user",
+                "userId": "U206d25c2ea6bd87c17655609a1c37cb8"
+            }, 
+            "message": {
+                "id": "325708",
+                "type": "text",
+                "text": "Hello, world"
+            }
+        }
+    ]
+}
+';
+
+// Message Events
+$messageEvents = '
+{
+    "events": 
+    [ 
+        {
+            "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA", 
+            "type": "message",
+            "timestamp": 1462629479859,
+            "source": {
+                "type": "user",
+                "userId": "U206d25c2ea6bd87c17655609a1c37cb8"
+            }, 
+            "message": {
+                "id": "325708",
+                "type": "file", 
+                "fileName": "file.txt", 
+                "fileSize": 2138
+            } 
+        }
+    
     ]
 }
 ';
