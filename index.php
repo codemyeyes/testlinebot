@@ -30,20 +30,24 @@ if (!is_null($events['events'])) {
             
             switch($event['message']['type']) {
                 case 'text':
-                    $sql = sprintf("SELECT * FROM slips WHERE slip_date='%s' AND user_id='%s' ", 
+                    $sql = sprintf(
+                        "SELECT * FROM slips WHERE slip_date='%s' AND user_id='%s' ", 
                         date('Y-m-d'),
                         $event['source']['userId']
                     );
                     $result = $connection->query($sql);
                     if($result!==false && $result->rowCount()>0){ //Save database
                         $params = array(
-                        'name'=> $event['message']['text'], 'slip_date'=> date('Y-m-d'), 'user_id'=> $event['source']['userId'],
+                            'name'=> $event['message']['text'], 
+                            'slip_date'=> date('Y-m-d'), 
+                            'user_id'=> $event['source']['userId'],
                         );
                         $statement=$connection->prepare('UPDATE slips SET name=:name WHERE slip_date=:slip_date AND user_id=:user_id');
                         $statement->execute($params);
                     }else {
                         $params = array(
-                            'user_id'=> $event['source']['userId'], 'slip_date'=> date('Y-m-d'),
+                            'user_id'=> $event['source']['userId'], 
+                            'slip_date'=> date('Y-m-d'),
                             'name'=> $event['message']['text'],
                         );
                         $statement = $connection->prepare('INSERT INTO slips (user_id, slip_date, name) VALUES(:user_id, :slip_date, :name)');
