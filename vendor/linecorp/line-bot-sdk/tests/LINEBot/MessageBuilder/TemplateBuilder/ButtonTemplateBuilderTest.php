@@ -15,6 +15,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
+
 namespace LINE\Tests\LINEBot\MessageBuilder\TemplateBuilder;
 
 use LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder;
@@ -106,6 +107,18 @@ JSON
 }
 JSON
         ],
+        [
+            'param' => [null, 'aaa', null, ['uri']],
+            'json' => <<<JSON
+{
+  "type":"buttons",
+  "text":"aaa",
+  "actions":[
+    {"type":"uri","label":"EEE","uri":"FFF"}
+  ]
+}
+JSON
+        ]
     ];
 
     public function test()

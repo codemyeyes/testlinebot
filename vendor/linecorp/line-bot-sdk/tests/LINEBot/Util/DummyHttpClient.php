@@ -24,7 +24,7 @@ use PHPUnit\Framework\TestCase;
 
 class DummyHttpClient implements HTTPClient
 {
-    /** @var \PHPUnit_Framework_TestCase */
+    /** @var \PHPUnit\Framework\TestCase */
     private $testRunner;
     /** @var \Closure */
     private $mock;
@@ -38,9 +38,10 @@ class DummyHttpClient implements HTTPClient
     /**
      * @param string $url
      * @param array $data Optional
+     * @param array $headers
      * @return Response
      */
-    public function get($url, $data = null)
+    public function get($url, array $data = [], array $headers = [])
     {
         $ret = call_user_func($this->mock, $this->testRunner, 'GET', $url, is_null($data) ? [] : $data);
         return new Response(200, json_encode($ret));
@@ -60,6 +61,7 @@ class DummyHttpClient implements HTTPClient
 
     /**
      * @param string $url
+     * @param array|null $data
      * @return Response
      */
     public function delete($url, $data = null)

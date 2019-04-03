@@ -101,37 +101,25 @@
         <tr><th colspan="2">Classes Summary</th></tr>
     <tr>
         <td class="name">
-            <a href="class-LINE.LINEBot.Event.BaseEvent.html">
-                BaseEvent
+            <a href="class-LINE.LINEBot.Event.AccountLinkEvent.html">
+                AccountLinkEvent
             </a>
         </td>
-        <td>Base class of each events.
+        <td>A class that represents the event of account link.
 
-Don't instantiate this class individually.</td>
+Event object for when a user has linked his/her LINE account with a provider's service account.
+You can reply to account link events.  If the link token has expired or has already been used,
+ no webhook event will be sent and the user will be shown an error.</td>
     </tr>
     <tr>
         <td class="name">
-            <a href="class-LINE.LINEBot.Event.BeaconDetectionEvent.html">
-                BeaconDetectionEvent
+            <a href="class-LINE.LINEBot.Event.UnknownEvent.html">
+                UnknownEvent
             </a>
         </td>
-        <td>A class that represents the event of beacon detection.</td>
-    </tr>
-    <tr>
-        <td class="name">
-            <a href="class-LINE.LINEBot.Event.FollowEvent.html">
-                FollowEvent
-            </a>
-        </td>
-        <td>A class that represents the event of following.</td>
-    </tr>
-    <tr>
-        <td class="name">
-            <a href="class-LINE.LINEBot.Event.JoinEvent.html">
-                JoinEvent
-            </a>
-        </td>
-        <td>A class that represents the event of joining.</td>
+        <td>A class that represents the unknown event.
+
+If the event is not supported by this SDK, the event will be instantiate to this.</td>
     </tr>
     <tr>
         <td class="name">
@@ -143,21 +131,27 @@ Don't instantiate this class individually.</td>
     </tr>
     <tr>
         <td class="name">
-            <a href="class-LINE.LINEBot.Event.MessageEvent.html">
-                MessageEvent
+            <a href="class-LINE.LINEBot.Event.MemberLeaveEvent.html">
+                MemberLeaveEvent
             </a>
         </td>
-        <td>A base class of message event.
-
-Don't instantiate this class individually.</td>
+        <td>A class that represents the event of leaving.</td>
     </tr>
     <tr>
         <td class="name">
-            <a href="class-LINE.LINEBot.Event.PostbackEvent.html">
-                PostbackEvent
+            <a href="class-LINE.LINEBot.Event.BeaconDetectionEvent.html">
+                BeaconDetectionEvent
             </a>
         </td>
-        <td>A class that represents the event of postback.</td>
+        <td>A class that represents the event of beacon detection.</td>
+    </tr>
+    <tr>
+        <td class="name">
+            <a href="class-LINE.LINEBot.Event.JoinEvent.html">
+                JoinEvent
+            </a>
+        </td>
+        <td>A class that represents the event of joining.</td>
     </tr>
     <tr>
         <td class="name">
@@ -169,13 +163,47 @@ Don't instantiate this class individually.</td>
     </tr>
     <tr>
         <td class="name">
-            <a href="class-LINE.LINEBot.Event.UnknownEvent.html">
-                UnknownEvent
+            <a href="class-LINE.LINEBot.Event.BaseEvent.html">
+                BaseEvent
             </a>
         </td>
-        <td>A class that represents the unknown event.
+        <td>Base class of each events.
 
-If the event is not supported by this SDK, the event will be instantiate to this.</td>
+Don't instantiate this class individually.</td>
+    </tr>
+    <tr>
+        <td class="name">
+            <a href="class-LINE.LINEBot.Event.MemberJoinEvent.html">
+                MemberJoinEvent
+            </a>
+        </td>
+        <td>A class that represents the event of joining.</td>
+    </tr>
+    <tr>
+        <td class="name">
+            <a href="class-LINE.LINEBot.Event.FollowEvent.html">
+                FollowEvent
+            </a>
+        </td>
+        <td>A class that represents the event of following.</td>
+    </tr>
+    <tr>
+        <td class="name">
+            <a href="class-LINE.LINEBot.Event.PostbackEvent.html">
+                PostbackEvent
+            </a>
+        </td>
+        <td>A class that represents the event of postback.</td>
+    </tr>
+    <tr>
+        <td class="name">
+            <a href="class-LINE.LINEBot.Event.MessageEvent.html">
+                MessageEvent
+            </a>
+        </td>
+        <td>A base class of message event.
+
+Don't instantiate this class individually.</td>
     </tr>
     </table>
 

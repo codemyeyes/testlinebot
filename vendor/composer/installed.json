@@ -1,20 +1,24 @@
 [
     {
         "name": "linecorp/line-bot-sdk",
-        "version": "3.1.0",
-        "version_normalized": "3.1.0.0",
+        "version": "3.7.0",
+        "version_normalized": "3.7.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/line/line-bot-sdk-php.git",
-            "reference": "4610f6be824cd7671d2e31edb3d6d22ba322cf11"
+            "reference": "73203900c8eebb3202c213d0488828c09ae51048"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/line/line-bot-sdk-php/zipball/4610f6be824cd7671d2e31edb3d6d22ba322cf11",
-            "reference": "4610f6be824cd7671d2e31edb3d6d22ba322cf11",
+            "url": "https://api.github.com/repos/line/line-bot-sdk-php/zipball/73203900c8eebb3202c213d0488828c09ae51048",
+            "reference": "73203900c8eebb3202c213d0488828c09ae51048",
             "shasum": ""
         },
         "require": {
+            "ext-curl": "*",
+            "ext-json": "*",
+            "ext-posix": "*",
+            "ext-sockets": "*",
             "php": ">=5.5"
         },
         "require-dev": {
@@ -29,7 +33,7 @@
             "apigen/apigen": "Install with roave/better-reflection:dev-master to generate docs",
             "roave/better-reflection": "Required by apigen/apigen:dev-master"
         },
-        "time": "2018-07-19T01:16:38+00:00",
+        "time": "2019-04-03T02:59:07+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -39,16 +43,23 @@
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "Apache License Version 2.0"
+            "Apache-2.0"
         ],
         "authors": [
             {
                 "name": "moznion",
-                "email": "moznion@gmail.com"
+                "email": "moznion@gmail.com",
+                "role": "Retired"
             },
             {
                 "name": "Satoru Yoshihara",
-                "email": "vaduz0@gmail.com"
+                "email": "vaduz0@gmail.com",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Satoshi Shibuya",
+                "email": "satosby@gmail.com",
+                "role": "Maintainer"
             }
         ],
         "description": "SDK of the LINE BOT API for PHP",
