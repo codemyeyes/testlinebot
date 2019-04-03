@@ -75,6 +75,11 @@ if (!is_null($events['events'])) {
 //        $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 
         $actionBuilder = array(
+            new UriTemplateActionBuilder(
+                'ฝาก-ถอน', // ข้อความแสดงในปุ่ม
+                'https://line.me/R/ti/p/@nub2372d'
+            ),
+            /*
             new MessageTemplateActionBuilder(
                 'Message Template',// ข้อความแสดงในปุ่ม
                 'This is Text' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
@@ -102,12 +107,16 @@ if (!is_null($events['events'])) {
                 )), // ข้อมูลที่จะส่งไปใน webhook ผ่าน postback event
                 'Postback Text'  // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
             ),
+            */
+
+
+
         );
-        $imageUrl = 'https://www.mywebsite.com/imgsrc/photos/w/simpleflower';
+        $imageUrl = 'https://scontent.fbkk2-3.fna.fbcdn.net/v/t1.0-9/55963078_2021602531479127_6774837307691237376_o.jpg?_nc_cat=107&_nc_ht=scontent.fbkk2-3.fna&oh=bdddaf9cf6423cc374962ae286f260ef&oe=5D0BB5D';
         $replyData = new TemplateMessageBuilder('Button Template',
             new ButtonTemplateBuilder(
-                'button template builder', // กำหนดหัวเรื่อง
-                'Please select', // กำหนดรายละเอียด
+                'โปรใหม่ต้อนรับสงกรานต์', // กำหนดหัวเรื่อง
+                'สมัครวันนี้500บ.รับ1,000บ.ทันที', // กำหนดรายละเอียด
                 $imageUrl, // กำหนด url รุปภาพ
                 $actionBuilder  // กำหนด action object
             )
